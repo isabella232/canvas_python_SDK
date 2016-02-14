@@ -24,7 +24,7 @@ def _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_
   if hashed_context != re_hashed_context:
     raise OptimizelyCanvasValidationError()
 
-def extractUserContext(signed_request, optimizely_oauth_client_secret):
+def extract_user_context(signed_request, optimizely_oauth_client_secret):
     hashed_context, unhashed_context = signed_request.split('.')
     try:
 	  _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_secret)

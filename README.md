@@ -4,21 +4,13 @@
 
 To get started you'll need to import the package:
 ```
-import canvas_SDK
+import optimizely_canvas_sdk
 
 ```
-
-Add the signed request and your Oauth Client secret:
-
+Extract the user context Object:
 ```
-canvas_app_values = canvas_SDK.CanvasValidation(signed_request, optimizely_oauth_client_secret) 
+canvas_app_values = optimizely_canvas_sdk.extract_user_context(signed_request, optimizely_oauth_client_secret) 
 
 ``` 
 
-Extract the user context Object:
-
-```
-user_context = canvas_app_values.extractUserContext()
-
-```
 
