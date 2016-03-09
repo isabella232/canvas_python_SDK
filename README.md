@@ -37,9 +37,15 @@ canvas_app_values will then be an object like this:
      user: { email: 'rebecca@optimizely.com' }
    }
 }
+```
 
-Error Handling
+#### Error Handling
+
 In the event the request is not properly signed, an error will be thrown:
-
+```
+Error: Request not properly signed.
+    at Error (native)
 
 ```
+
+If an error is thrown, you should immediately return an HTTP 401 to the user and assume the request was malicious. Do not do any processing for the user or expose any data to the user.
