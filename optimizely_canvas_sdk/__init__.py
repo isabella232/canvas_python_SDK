@@ -27,8 +27,5 @@ def _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_
 
 def extract_user_context(signed_request, optimizely_oauth_client_secret):
   hashed_context, unhashed_context = signed_request.split('.')
-  try:
-	  _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_secret)
-	  return _decode_context(unhashed_context)
-  except OptimizelyCanvasValidationError:
-	  raise OptimizelyCanvasValidationError('Error: Request not properly signed')
+	_validate_context(hashed_context, unhashed_context, optimizely_oauth_client_secret)
+	return _decode_context(unhashed_context)
