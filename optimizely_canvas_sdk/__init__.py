@@ -7,7 +7,6 @@ import base64
 import hashlib
 import hmac
 import json
-import os
 import urllib
 
 class OptimizelyCanvasValidationError(Exception):
@@ -27,5 +26,5 @@ def _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_
 
 def extract_user_context(signed_request, optimizely_oauth_client_secret):
   hashed_context, unhashed_context = signed_request.split('.')
-	_validate_context(hashed_context, unhashed_context, optimizely_oauth_client_secret)
-	return _decode_context(unhashed_context)
+  _validate_context(hashed_context, unhashed_context, optimizely_oauth_client_secret)
+  return _decode_context(unhashed_context)
