@@ -29,15 +29,22 @@ canvas_app_values = optimizely_canvas_sdk.extract_user_context(signed_request, '
 
 canvas_app_values will then be a nested dictionary like this:
 ```
-[context:
-   { environment: { current_project: 1234567, current_account: 7654321 },
-     client:
-      { access_token: '1234567890abcdefghijklmnopqrstuvwxyz123',
-        token_type: 'bearer',
-        expires_in: 7200 },
-     user: { email: 'jon@optimizely.com' }
-   }
-]
+{
+	u'context': {
+		u'environment': {
+			u'current_project': 1234567, 
+			u'current_account': 7654321
+		}, 
+		u'client': {
+			u'access_token': u'1234567890abcdefghijklmnopqrstuvwxyz123', 
+			u'token_type': u'bearer', 
+			u'expires_in': 7200
+		}, 
+		u'user': {
+			u'email': u'jon@optimizely.com'
+		}
+	}
+}
 ```
 
 #### Error Handling
